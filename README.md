@@ -3,7 +3,7 @@
 ## Equipe
 - Enzo Okita - 2020.1906.019-9
 - Jeú Chaves - 2020.1906.027-0
-- Ralson Ruan - 
+- Ralson Ruan - 2020.1906.038-5 
 
 ## Avaliadora:
 @anakarinafacom
