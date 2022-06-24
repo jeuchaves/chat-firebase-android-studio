@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private void fazerLogin() {
         // TODO
+        Intent it = new Intent(MainActivity.this, Contatos.class);
+        startActivity(it);
     }
 
     /**

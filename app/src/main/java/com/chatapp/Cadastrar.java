@@ -2,6 +2,7 @@ package com.chatapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,5 +42,7 @@ public class Cadastrar extends AppCompatActivity {
      */
     private void cadastrarUsuario() {
         // TODO
+        Intent it = new Intent(Cadastrar.this, Contatos.class);
+        startActivity(it);
     }
 }
