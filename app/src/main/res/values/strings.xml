@@ -6,4 +6,6 @@
     <string name="hint_email">Email</string>
     <string name="hint_senha">Senha</string>
     <string name="hint_nome">Nome</string>
+    <string name="menu_contato">Contatos</string>
+    <string name="menu_sair">Sair</string>
 </resources>
