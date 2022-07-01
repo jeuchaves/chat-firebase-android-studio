@@ -43,12 +43,13 @@ public class CadastrarActivity extends AppCompatActivity {
     }
 
     private void criarUsuario() {
+        String nome = edt_usuario.getText().toString();
         String email = edt_email.getText().toString();
         String senha = edt_senha.getText().toString();
 
-        if(email == null || senha == null || email.isEmpty() || senha.isEmpty()) {
-            Toast.makeText(this, "Senha e email devem ser preenchidos", Toast.LENGTH_SHORT).show();
-            Log.i("Teste", "Senha e email devem ser preenchidos");
+        if(nome == null || email == null || senha == null || nome.isEmpty() || email.isEmpty() || senha.isEmpty()) {
+            Toast.makeText(this, "Nome, email e senha devem ser preenchidos", Toast.LENGTH_SHORT).show();
+            Log.i("Teste", "Nome, email e senha devem ser preenchidos");
             return;
         }
 
@@ -56,8 +57,10 @@ public class CadastrarActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful())
+                        if(task.isSuccessful()) {
                             Log.i("Teste", task.getResult().getUser().getUid());
+                            salvarUsuarioFireBase();
+                        }
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -66,5 +69,9 @@ public class CadastrarActivity extends AppCompatActivity {
                         Log.i("Teste", e.getMessage());
                     }
                 });
+    }
+
+    private void salvarUsuarioFireBase() {
+        
     }
 }
