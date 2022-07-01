@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "931214625513",
+    "project_id": "ejr-chat",
+    "storage_bucket": "ejr-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931214625513:android:4bf450182e548994d8fe78",
+        "android_client_info": {
+          "package_name": "progmov20221.trabalhofinal.ejrchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931214625513-drhn311n56dtpnui6112pe58l7q11t9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBAja2Zxe8eMkVdIrhPDxjEOi86XPz23s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "931214625513-drhn311n56dtpnui6112pe58l7q11t9p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
