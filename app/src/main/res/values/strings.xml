@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">EJR Chat</string>
+    <string name="criar_conta">Não tem uma conta? Cadastrar-se</string>
+    <string name="login">Fazer Login</string>
+    <string name="cadastrar">Criar Cadastro</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_senha">Senha</string>
+    <string name="hint_nome">Nome</string>
 </resources>
