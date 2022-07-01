@@ -12,10 +12,15 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import progmov20221.trabalhofinal.ejrchat.model.Usuario;
 
 public class CadastrarActivity extends AppCompatActivity {
 
@@ -72,6 +77,23 @@ public class CadastrarActivity extends AppCompatActivity {
     }
 
     private void salvarUsuarioFireBase() {
-        
+        String uuid = FirebaseAuth.getInstance().getUid();
+        String nome = edt_usuario.getText().toString();
+        Usuario usuario = new Usuario(uuid, nome);
+
+        FirebaseFirestore.getInstance().collection("usuarios")
+                .add(usuario)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.i("Teste", documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.i("Teste", e.getMessage());
+                    }
+                });
     }
 }
