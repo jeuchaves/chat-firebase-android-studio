@@ -2,8 +2,10 @@ package progmov20221.trabalhofinal.ejrchat.model;
 
 public class Usuario {
 
-    private final String uuid;
-    private final String nome;
+    private String uuid;
+    private String nome;
+
+    public Usuario() {}
 
     public Usuario(String uuid, String nome) {
         this.uuid = uuid;
