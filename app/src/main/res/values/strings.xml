@@ -5,8 +5,10 @@
     <string name="cadastrar">Criar Cadastro</string>
     <string name="hint_email">Email</string>
     <string name="hint_senha">Senha</string>
+    <string name="hint_mensagem">Digite sua mensagem aqui...</string>
     <string name="hint_nome">Nome</string>
     <string name="menu_contato">Contatos</string>
     <string name="menu_sair">Sair</string>
     <string name="content_description">Usuario</string>
+    <string name="enviar_mensagem">Enviar</string>
 </resources>

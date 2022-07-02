@@ -13,10 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EJRChat">
         <activity
-            android:label="Contatos"
+            android:name=".ChatActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MensagensActivity" />
+        </activity>
+        <activity
             android:name=".ContatosActivity"
-            android:exported="false">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
+            android:exported="false"
+            android:label="Contatos">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MensagensActivity" />
         </activity>
         <activity
