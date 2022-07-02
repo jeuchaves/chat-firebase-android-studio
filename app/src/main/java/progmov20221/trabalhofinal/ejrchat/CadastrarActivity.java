@@ -1,8 +1,5 @@
 package progmov20221.trabalhofinal.ejrchat;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,14 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import progmov20221.trabalhofinal.ejrchat.model.Usuario;
@@ -83,11 +81,11 @@ public class CadastrarActivity extends AppCompatActivity {
         Usuario usuario = new Usuario(uuid, nome);
 
         FirebaseFirestore.getInstance().collection("usuarios")
-                .add(usuario)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                .document(uuid)
+                .set(usuario)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.i("Teste", documentReference.getId());
+                    public void onSuccess(Void unused) {
                         Intent intent = new Intent(CadastrarActivity.this, MensagensActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
