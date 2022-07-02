@@ -133,8 +133,11 @@ public class ChatActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
                             Log.d("teste", documentReference.getId());
+<<<<<<< HEAD
 
                             
+=======
+>>>>>>> 6635831d518bbaedc0d73ff3ab28ed2814f5132a
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
