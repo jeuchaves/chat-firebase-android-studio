@@ -35,6 +35,7 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
+import progmov20221.trabalhofinal.ejrchat.model.Contato;
 import progmov20221.trabalhofinal.ejrchat.model.Mensagem;
 import progmov20221.trabalhofinal.ejrchat.model.Usuario;
 
@@ -133,6 +134,18 @@ public class ChatActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
                             Log.d("teste", documentReference.getId());
+                          
+                            Contato contato = new Contato();
+                            contato.setNome(usuario.getNome());
+                            contato.setUuid(idRecebido);
+                            contato.setTimestamp(mensagem.getTimestamp());
+                            contato.setUltimaMensagem(mensagem.getTexto());
+
+                            FirebaseFirestore.getInstance().collection("/ultimas-mensagens")
+                                    .document(idEnviado)
+                                    .collection("contatos")
+                                    .document(idRecebido)
+                                    .set(contato);
 
                         }
                     })
@@ -152,6 +165,18 @@ public class ChatActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
                             Log.d("teste", documentReference.getId());
+
+                            Contato contato = new Contato();
+                            contato.setNome(usuario.getNome());
+                            contato.setUuid(idRecebido);
+                            contato.setTimestamp(mensagem.getTimestamp());
+                            contato.setUltimaMensagem(mensagem.getTexto());
+
+                            FirebaseFirestore.getInstance().collection("/ultimas-mensagens")
+                                    .document(idRecebido)
+                                    .collection("contatos")
+                                    .document(idEnviado)
+                                    .set(contato);
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
