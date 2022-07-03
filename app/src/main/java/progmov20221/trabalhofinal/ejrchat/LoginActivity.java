@@ -22,8 +22,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText edt_email;
     private EditText edt_senha;
-    private Button btn_entrar;
-    private TextView txt_cadastrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +30,8 @@ public class LoginActivity extends AppCompatActivity {
 
         edt_email = findViewById(R.id.edt_email);
         edt_senha = findViewById(R.id.edt_senha);
-        btn_entrar = findViewById(R.id.btn_entrar);
-        txt_cadastrar = findViewById(R.id.txt_cadastrar);
+        Button btn_entrar = findViewById(R.id.btn_entrar);
+        TextView txt_cadastrar = findViewById(R.id.txt_cadastrar);
 
         btn_entrar.setOnClickListener(new View.OnClickListener() {
             @Override

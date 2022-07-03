@@ -26,7 +26,6 @@ public class CadastrarActivity extends AppCompatActivity {
     private EditText edt_usuario;
     private EditText edt_email;
     private EditText edt_senha;
-    private Button btn_cadastrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +35,7 @@ public class CadastrarActivity extends AppCompatActivity {
         edt_usuario = findViewById(R.id.edt_usuario_cadastro);
         edt_email = findViewById(R.id.edt_email_cadastro);
         edt_senha = findViewById(R.id.edt_senha_cadastro);
-        btn_cadastrar = findViewById(R.id.btn_cadastrar);
+        Button btn_cadastrar = findViewById(R.id.btn_cadastrar);
 
         btn_cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
