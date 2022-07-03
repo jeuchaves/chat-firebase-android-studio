@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -28,6 +29,7 @@ import com.xwray.groupie.OnItemClickListener;
 import java.util.List;
 
 import progmov20221.trabalhofinal.ejrchat.model.Contato;
+import progmov20221.trabalhofinal.ejrchat.model.Usuario;
 
 public class MensagensActivity extends AppCompatActivity {
 
@@ -46,6 +48,24 @@ public class MensagensActivity extends AppCompatActivity {
 
         verificarAutenticacao();
         buscarUltimaMensagem();
+
+        adapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(@NonNull Item item, @NonNull View view) {
+                Log.i("Teste", item.toString());
+                ItemContato itemContato = (ItemContato) item;
+                FirebaseFirestore.getInstance().collection("/usuarios")
+                        .document(itemContato.contato.getUuid())
+                        .addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                            @Override
+                            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                                Intent intent = new Intent(MensagensActivity.this, ChatActivity.class);
+                                intent.putExtra("usuario", value.toObject(Usuario.class));
+                                startActivity(intent);
+                            }
+                        });
+            }
+        });
     }
 
     private void buscarUltimaMensagem() {
