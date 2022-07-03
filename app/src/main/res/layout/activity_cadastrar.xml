@@ -17,8 +17,6 @@
         android:ems="10"
         android:hint="@string/hint_nome"
         android:inputType="textPersonName"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,8 +32,6 @@
         android:ems="10"
         android:hint="@string/hint_email"
         android:inputType="textEmailAddress"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_usuario_cadastro" />
@@ -51,8 +47,6 @@
         android:ems="10"
         android:hint="@string/hint_senha"
         android:inputType="textPassword"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_email_cadastro" />
