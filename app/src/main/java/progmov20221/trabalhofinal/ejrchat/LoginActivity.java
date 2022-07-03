@@ -41,7 +41,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(email == null || senha == null || email.isEmpty() || senha.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Email e senha devem ser preenchidos", Toast.LENGTH_SHORT);
-                    Log.i("Teste", "Email e senha devem ser preenchidos");
                     return;
                 }
 
@@ -50,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()) {
-                                    Log.i("Teste", task.getResult().getUser().getUid());
                                     Intent intent = new Intent(LoginActivity.this, MensagensActivity.class);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
@@ -60,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.i("Teste", e.getMessage());
+                                Log.e("Teste", "login(): " + e.getMessage());
                             }
                         });
             }

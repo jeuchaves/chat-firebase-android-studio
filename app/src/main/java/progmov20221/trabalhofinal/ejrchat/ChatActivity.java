@@ -128,8 +128,6 @@ public class ChatActivity extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
-                            Log.d("teste", documentReference.getId());
-                          
                             Contato contato = new Contato();
                             contato.setNome(usuario.getNome());
                             contato.setUuid(idRecebido);
@@ -147,7 +145,7 @@ public class ChatActivity extends AppCompatActivity {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Log.e("teste", e.getMessage());
+                            Log.e("teste", "enviarMensagem(): " + e.getMessage());
                         }
                     });
 
@@ -159,8 +157,6 @@ public class ChatActivity extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
-                            Log.d("teste", documentReference.getId());
-
                             Contato contato = new Contato();
                             contato.setNome(usuario.getNome());
                             contato.setUuid(idRecebido);
@@ -177,7 +173,7 @@ public class ChatActivity extends AppCompatActivity {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Log.e("teste", e.getMessage());
+                            Log.e("teste", "enviarMensagem(): " + e.getMessage());
                         }
                     });
         }

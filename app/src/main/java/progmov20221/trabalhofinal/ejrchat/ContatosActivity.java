@@ -61,7 +61,7 @@ public class ContatosActivity extends AppCompatActivity {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                         if(error != null) {
-                            Log.e("Teste", error.getMessage(), error);
+                            Log.e("Teste", "buscarUsuarios(): " + error.getMessage(), error);
                             return;
                         }
 
@@ -70,7 +70,6 @@ public class ContatosActivity extends AppCompatActivity {
                             Usuario usuario = doc.toObject(Usuario.class);
                             if(!usuario.getUuid().equals(FirebaseAuth.getInstance().getUid()))
                                 adapter.add(new UsuarioRecycler(usuario));
-                            Log.d("Teste", usuario.getNome());
                         }
                     }
                 });
