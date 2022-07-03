@@ -63,6 +63,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:text="@string/cadastrar"
+        android:background="@drawable/button"
         app:backgroundTint="@color/buttons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
