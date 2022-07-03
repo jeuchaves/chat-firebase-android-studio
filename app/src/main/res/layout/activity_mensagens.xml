@@ -5,7 +5,9 @@
     android:id="@+id/constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MensagensActivity" >
+    android:background="@color/white"
+    tools:context=".MensagensActivity">
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_ultimas_mensagens"

@@ -134,7 +134,7 @@ public class ChatActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
                             Log.d("teste", documentReference.getId());
-
+                          
                             Contato contato = new Contato();
                             contato.setNome(usuario.getNome());
                             contato.setUuid(idRecebido);
@@ -146,6 +146,7 @@ public class ChatActivity extends AppCompatActivity {
                                     .collection("contatos")
                                     .document(idRecebido)
                                     .set(contato);
+
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
