@@ -22,8 +22,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText edt_email;
     private EditText edt_senha;
-    private Button btn_entrar;
-    private TextView txt_cadastrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +30,8 @@ public class LoginActivity extends AppCompatActivity {
 
         edt_email = findViewById(R.id.edt_email);
         edt_senha = findViewById(R.id.edt_senha);
-        btn_entrar = findViewById(R.id.btn_entrar);
-        txt_cadastrar = findViewById(R.id.txt_cadastrar);
+        Button btn_entrar = findViewById(R.id.btn_entrar);
+        TextView txt_cadastrar = findViewById(R.id.txt_cadastrar);
 
         btn_entrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +41,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(email == null || senha == null || email.isEmpty() || senha.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Email e senha devem ser preenchidos", Toast.LENGTH_SHORT);
-                    Log.i("Teste", "Email e senha devem ser preenchidos");
                     return;
                 }
 
@@ -52,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()) {
-                                    Log.i("Teste", task.getResult().getUser().getUid());
                                     Intent intent = new Intent(LoginActivity.this, MensagensActivity.class);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
@@ -62,7 +58,8 @@ public class LoginActivity extends AppCompatActivity {
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.i("Teste", e.getMessage());
+                                Log.e("Teste", "login(): " + e.getMessage());
+                                Toast.makeText(LoginActivity.this, "Algo deu errado, tente novamente mais tarde", Toast.LENGTH_SHORT).show();
                             }
                         });
             }

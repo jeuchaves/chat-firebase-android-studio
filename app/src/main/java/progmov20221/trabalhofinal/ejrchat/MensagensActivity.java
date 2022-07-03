@@ -52,7 +52,6 @@ public class MensagensActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull Item item, @NonNull View view) {
-                Log.i("Teste", item.toString());
                 ItemContato itemContato = (ItemContato) item;
                 FirebaseFirestore.getInstance().collection("/usuarios")
                         .document(itemContato.contato.getUuid())
