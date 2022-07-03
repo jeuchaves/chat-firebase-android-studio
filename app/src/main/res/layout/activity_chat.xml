@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ChatActivity">
 
     <EditText
@@ -17,6 +18,8 @@
         android:ems="10"
         android:hint="@string/hint_mensagem"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_enviar_mensagem"
         app:layout_constraintHorizontal_bias="0.0"
@@ -29,6 +32,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/enviar_mensagem"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/buttons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
