@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -67,7 +68,8 @@ public class ContatosActivity extends AppCompatActivity {
                         List<DocumentSnapshot> docs = value.getDocuments();
                         for(DocumentSnapshot doc : docs) {
                             Usuario usuario = doc.toObject(Usuario.class);
-                            adapter.add(new UsuarioRecycler(usuario));
+                            if(!usuario.getUuid().equals(FirebaseAuth.getInstance().getUid()))
+                                adapter.add(new UsuarioRecycler(usuario));
                             Log.d("Teste", usuario.getNome());
                         }
                     }
