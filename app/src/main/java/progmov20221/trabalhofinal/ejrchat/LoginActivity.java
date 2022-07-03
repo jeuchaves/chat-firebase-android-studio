@@ -59,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 Log.e("Teste", "login(): " + e.getMessage());
+                                Toast.makeText(LoginActivity.this, "Algo deu errado, tente novamente mais tarde", Toast.LENGTH_SHORT).show();
                             }
                         });
             }

@@ -68,6 +68,7 @@ public class CadastrarActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.e("Teste", "criarUsuario(): " + e.getMessage());
+                        Toast.makeText(CadastrarActivity.this, "Verifique os dados e tente novamente", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -92,6 +93,7 @@ public class CadastrarActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.e("Teste", "salvarUsuario(): " + e.getMessage());
+                        Toast.makeText(CadastrarActivity.this, "Erro ao se conectar ao Firebase, tente novamente mais tarde", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
